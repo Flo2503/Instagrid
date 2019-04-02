@@ -10,16 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-
-    @IBOutlet weak var firstIconCorrect: UIImageView!
-    @IBOutlet weak var secondIconCorrect: UIImageView!
-    @IBOutlet weak var thirdIconCorrect: UIImageView!
+  @IBOutlet weak var buttonView: ButtonView!
     
-    
-    @IBOutlet weak var firstGridButton: UIButton!
-    @IBOutlet weak var secondGridButton: UIButton!
-    @IBOutlet weak var thirdGridButton: UIButton!
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,23 +20,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showFirstGrid(_ sender: Any) {
-        thirdIconCorrect.isHidden = true
-        firstIconCorrect.isHidden = false
-        secondIconCorrect.isHidden = true
+        buttonView.style = .firstButton
     }
     
     @IBAction func showSecondGrid(_ sender: Any) {
-        thirdIconCorrect.isHidden = true
-        firstIconCorrect.isHidden = true
-        secondIconCorrect.isHidden = false
+        buttonView.style = .secondButton
     }
     
     
     @IBAction func showThirdGrid(_ sender: Any) {
-        thirdIconCorrect.isHidden = false
-        firstIconCorrect.isHidden = true
-        secondIconCorrect.isHidden = true
-        
+        buttonView.style = .thirdButton
     }
     
 }
