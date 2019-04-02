@@ -8,7 +8,7 @@
 
 import UIKit
 
-class gridView: UIView {
+class FirstGrid: UIView {
 
     
     
