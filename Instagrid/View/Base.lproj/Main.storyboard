@@ -50,7 +50,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button1"/>
                                         <connections>
-                                            <action selector="showFirstGrid:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J5L-45-VjQ"/>
+                                            <action selector="didTapFirstGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CC8-eQ-m6X"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnP-JU-JEx" userLabel="Second Grid Button">
@@ -59,7 +59,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button2"/>
                                         <connections>
-                                            <action selector="showSecondGrid:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4jQ-6a-ZAl"/>
+                                            <action selector="didTapSecondGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kvp-sS-Ex4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opA-rB-XLW" userLabel="Third Grid Button">
@@ -68,7 +68,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button3"/>
                                         <connections>
-                                            <action selector="showThirdGrid:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5sA-2N-jgt"/>
+                                            <action selector="didTapThirdGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JzE-Ov-NiT"/>
                                         </connections>
                                     </button>
                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon Correct" translatesAutoresizingMaskIntoConstraints="NO" id="vw6-ub-4aa" userLabel="First Icon Correct">

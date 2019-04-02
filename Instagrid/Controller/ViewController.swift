@@ -19,17 +19,17 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func showFirstGrid(_ sender: Any) {
+    @IBAction func didTapFirstGridButton(_ sender: Any) {
         buttonView.style = .firstButton
     }
-    
-    @IBAction func showSecondGrid(_ sender: Any) {
+   
+    @IBAction func didTapSecondGridButton(_ sender: Any) {
         buttonView.style = .secondButton
     }
     
-    
-    @IBAction func showThirdGrid(_ sender: Any) {
+    @IBAction func didTapThirdGridButton(_ sender: Any) {
         buttonView.style = .thirdButton
     }
+    
     
 }
