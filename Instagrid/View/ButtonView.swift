@@ -10,25 +10,23 @@ import UIKit
 
 class ButtonView: UIView {
 
-   
-    
-    
+       
     @IBOutlet weak var firstIconCorrect: UIView!
     @IBOutlet weak var secondIconCorrect: UIView!
     @IBOutlet weak var thirdIconCorrect: UIView!
    
     
-    enum Style {
+    enum ButtonStyle {
         case firstButton, secondButton, thirdButton
     }
     
-    var style: Style = .firstButton {
+    var style: ButtonStyle = .firstButton {
         didSet {
             setStyle(style)
         }
     }
     
-    private func setStyle(_ style: Style) {
+    private func setStyle(_ style: ButtonStyle) {
         switch style {
             case .firstButton:
                 firstIconCorrect.isHidden = false

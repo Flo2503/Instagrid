@@ -10,11 +10,5 @@ import UIKit
 
 class SecondGrid: UIView {
 
-    
-    
-    func style() {
-        
-    }
-
    
 }

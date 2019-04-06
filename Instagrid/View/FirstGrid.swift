@@ -10,5 +10,12 @@ import UIKit
 
 class FirstGrid: UIView {
 
+    @IBOutlet weak var topCenterButton: UIButton!
+    @IBOutlet weak var bottomRightButton: UIButton!
+    @IBOutlet weak var bottomLeftButton: UIButton!
+    
+    
+    
   
+    
 }
