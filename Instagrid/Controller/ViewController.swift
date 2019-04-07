@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class ViewController: UIViewController {
     
     @IBOutlet weak var buttonView: ButtonView!
     @IBOutlet weak var firstGrid: FirstGrid!
@@ -16,14 +16,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var thirdGrid: ThirdGrid!
 
 
-    @IBOutlet weak var firstGridBotLeftIm: UIImageView!
-    
     var imagePicker = UIImagePickerController()
     
  
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(tapOnGridButtons), name: NSNotification.Name("tapOnGridButtons"), object: nil)
     }
     
 
@@ -50,23 +49,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    @IBAction func clickOnGridButtons(_ sender: Any) {
+//Access photo library
+    @objc func tapOnGridButtons() {
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            firstGridBotLeftIm.image = image
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
+    
+    
+    
 
 
 }
 
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            
+            firstGrid.bottomLetftImage.image = image
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+   
+}
 
 
 

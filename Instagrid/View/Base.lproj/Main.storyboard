@@ -109,7 +109,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="clickOnGridButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wnz-6x-yw6"/>
+                                            <action selector="didTapButton:" destination="ihQ-1c-cpR" eventType="touchUpInside" id="QOE-qV-S7O"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5n-yT-Zbu" userLabel="Bottom Right Button">
@@ -117,18 +117,15 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="clickOnGridButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dKA-cy-WiC"/>
+                                            <action selector="didTapButton:" destination="ihQ-1c-cpR" eventType="touchUpInside" id="r0w-Wr-gnf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="co9-r4-tr5" userLabel="Bottom Left Button">
                                         <rect key="frame" x="8" y="128" width="122" height="109"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="clickOnGridButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="saU-4a-4Kc"/>
-                                        </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VWe-Mw-bwU" userLabel="Bottom Center Image">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VWe-Mw-bwU" userLabel="Top Center Image">
                                         <rect key="frame" x="-8" y="8" width="288" height="109"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -142,6 +139,14 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="bottomLeftButton" destination="co9-r4-tr5" id="8Uh-s7-Azz"/>
+                                    <outlet property="bottomLetftImage" destination="D3C-pI-yTV" id="yMh-o1-bka"/>
+                                    <outlet property="bottomRightButton" destination="t5n-yT-Zbu" id="DA1-Qv-EeZ"/>
+                                    <outlet property="bottomRightImage" destination="UXM-ot-brW" id="Jql-F1-Wcn"/>
+                                    <outlet property="topCenterButton" destination="YIl-LO-gBI" id="8vO-rh-Wjj"/>
+                                    <outlet property="topCenterImage" destination="VWe-Mw-bwU" id="OeY-mI-b4Q"/>
+                                </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pod-MK-1RG" userLabel="Third Grid" customClass="ThirdGrid" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="52" y="211" width="271" height="245"/>
@@ -152,7 +157,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="clickOnGridButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U2U-Vb-AtG"/>
+                                            <action selector="didTapButton:" destination="Pod-MK-1RG" eventType="touchUpInside" id="7lh-SE-rz9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1L-d1-KLr" userLabel="Top Right Button">
@@ -160,23 +165,23 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="clickOnGridButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cds-Vp-7A8"/>
+                                            <action selector="didTapButton:" destination="Pod-MK-1RG" eventType="touchUpInside" id="p2e-AF-WjQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEh-4e-j9o" userLabel="Buttom Left Button">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEh-4e-j9o" userLabel="Bottom Left Button">
                                         <rect key="frame" x="8" y="128" width="122" height="109"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="clickOnGridButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EtJ-oo-Ycg"/>
+                                            <action selector="didTapButton:" destination="Pod-MK-1RG" eventType="touchUpInside" id="d01-GV-pMx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgc-te-0NU" userLabel="Buttom Right Button">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgc-te-0NU" userLabel="Bottom Right Button">
                                         <rect key="frame" x="141" y="128" width="122" height="109"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="clickOnGridButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rdP-8m-O4h"/>
+                                            <action selector="didTapButton:" destination="Pod-MK-1RG" eventType="touchUpInside" id="rKr-Kl-0lj"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddSquare" translatesAutoresizingMaskIntoConstraints="NO" id="hK7-V6-cIV" userLabel="Bottom Right Image">
@@ -197,6 +202,16 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="bottomLeftButton" destination="wEh-4e-j9o" id="y6e-am-y1R"/>
+                                    <outlet property="bottomLeftImage" destination="ONn-rp-bEu" id="yaZ-cI-hzt"/>
+                                    <outlet property="bottomRightButton" destination="wgc-te-0NU" id="rdX-mT-sMM"/>
+                                    <outlet property="bottomRightImage" destination="hK7-V6-cIV" id="Tyg-SQ-0o3"/>
+                                    <outlet property="topLeftButton" destination="EVv-Xx-fuA" id="01S-so-mpw"/>
+                                    <outlet property="topLeftImage" destination="lNN-Qc-48b" id="6Tu-Mk-ZX8"/>
+                                    <outlet property="topRightButton" destination="K1L-d1-KLr" id="l5y-OV-rdd"/>
+                                    <outlet property="topRightImage" destination="fv2-u6-WMl" id="bc2-Bq-hLE"/>
+                                </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w2o-DM-NqH" userLabel="Second Grid" customClass="SecondGrid" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="52" y="211" width="271" height="245"/>
@@ -207,7 +222,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="clickOnGridButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5UQ-dP-teM"/>
+                                            <action selector="didTapButton:" destination="w2o-DM-NqH" eventType="touchUpInside" id="sgI-ka-CEX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldn-pv-pOJ" userLabel="Top Right Button">
@@ -215,7 +230,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="clickOnGridButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KGh-GS-0P2"/>
+                                            <action selector="didTapButton:" destination="w2o-DM-NqH" eventType="touchUpInside" id="rjw-gE-XEY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XD6-MN-vU0" userLabel="Bottom Center Button">
@@ -223,7 +238,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="clickOnGridButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dec-oZ-I3b"/>
+                                            <action selector="didTapButton:" destination="w2o-DM-NqH" eventType="touchUpInside" id="wqj-VS-zne"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddSquare" translatesAutoresizingMaskIntoConstraints="NO" id="CSK-Ot-k6B" userLabel="Top Left Image">
@@ -240,6 +255,14 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="bottomCenterButton" destination="XD6-MN-vU0" id="MH8-i5-FRv"/>
+                                    <outlet property="bottomCenterImage" destination="ro5-CY-lzc" id="bgu-hk-oxf"/>
+                                    <outlet property="topLeftButton" destination="TL2-ga-ogp" id="1jv-jj-Jl8"/>
+                                    <outlet property="topLeftImage" destination="CSK-Ot-k6B" id="7UD-jZ-oIz"/>
+                                    <outlet property="topRightButton" destination="ldn-pv-pOJ" id="Hgn-lS-xzi"/>
+                                    <outlet property="topRightImage" destination="UW3-d7-l1G" id="w57-WW-fCB"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.71820169687271118" green="0.84184938669204712" blue="0.89678025245666504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -250,7 +273,6 @@
                     <connections>
                         <outlet property="buttonView" destination="lng-W1-w7r" id="98k-38-SQV"/>
                         <outlet property="firstGrid" destination="ihQ-1c-cpR" id="fU3-ay-xNn"/>
-                        <outlet property="firstGridBotLeftIm" destination="D3C-pI-yTV" id="9BB-Fb-YRH"/>
                         <outlet property="secondGrid" destination="w2o-DM-NqH" id="jNm-MX-Xw5"/>
                         <outlet property="thirdGrid" destination="Pod-MK-1RG" id="xfk-qM-5e0"/>
                     </connections>
