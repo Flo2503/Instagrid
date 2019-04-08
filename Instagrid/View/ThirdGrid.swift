@@ -9,6 +9,8 @@
 import UIKit
 
 class ThirdGrid: UIView {
+    
+    var currentImageView: UIImageView?
 
     @IBOutlet weak var topLeftButton: UIButton!
     @IBOutlet weak var topRightButton: UIButton!
@@ -20,7 +22,24 @@ class ThirdGrid: UIView {
     @IBOutlet weak var topLeftImage: UIImageView!
     @IBOutlet weak var topRightImage: UIImageView!
 
-    @IBAction func didTapButton(_ sender: UIButton) {
+   
+    @IBAction func didTapButtonTL(_ sender: UIButton) {
+        currentImageView = topLeftImage
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "tapOnGridButtons"), object: nil)
+    }
+    
+    @IBAction func didTapButtonTR(_ sender: UIButton) {
+        currentImageView = topRightImage
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "tapOnGridButtons"), object: nil)
+    }
+    
+    @IBAction func didTapButttonBL(_ sender: UIButton) {
+        currentImageView = bottomLeftImage
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "tapOnGridButtons"), object: nil)
+    }
+    
+    @IBAction func didTapButtonBR(_ sender: UIButton) {
+        currentImageView = bottomRightImage
         NotificationCenter.default.post(name: Notification.Name(rawValue: "tapOnGridButtons"), object: nil)
     }
 

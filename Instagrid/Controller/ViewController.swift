@@ -16,13 +16,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var thirdGrid: ThirdGrid!
 
 
-    var imagePicker = UIImagePickerController()
+    private var imagePicker = UIImagePickerController()
     
  
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(tapOnGridButtons), name: NSNotification.Name("tapOnGridButtons"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(selectPicLibrary), name: NSNotification.Name("tapOnGridButtons"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(sharePics), name: NSNotification.Name("swipeToShare"), object: nil)
     }
     
 
@@ -47,19 +48,26 @@ class ViewController: UIViewController {
         secondGrid.isHidden = true
         thirdGrid.isHidden = false
     }
+ 
     
     
 //Access photo library
-    @objc func tapOnGridButtons() {
+    @objc private func selectPicLibrary() {
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
     }
     
+//Share photos
+    @objc private func sharePics() {
+        if let image = firstGrid.bottomLetftImage.image {
+            let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            activityVC.popoverPresentationController?.sourceView = self.view
+            
+            self.present(activityVC, animated: true, completion: nil)
+        }
+    }
     
-    
-    
-
 
 }
 
@@ -68,14 +76,27 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             
-            firstGrid.bottomLetftImage.image = image
-        }
+            switch buttonView.style {
+            case .firstButton:
+                firstGrid.currentImageView?.image = image
+                break
+            case .secondButton:
+                secondGrid.currentImageView?.image = image
+                break
+            case .thirdButton:
+                thirdGrid.currentImageView?.image = image
+                break
+                
+            }
+
+    }
         
         dismiss(animated: true, completion: nil)
     }
     
-   
 }
+
+
 
 
 
