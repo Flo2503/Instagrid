@@ -103,7 +103,7 @@
                                     <outlet property="thirdIconCorrect" destination="uym-QB-DVp" id="KyZ-Xq-AOI"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihQ-1c-cpR" userLabel="First Grid" customClass="FirstGrid" customModule="Instagrid" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihQ-1c-cpR" userLabel="First Grid" customClass="FirstGrid" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="52" y="211" width="271" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>

@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
 
     private var imagePicker = UIImagePickerController()
-    
+    private var currentView: UIView?
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,7 @@ class ViewController: UIViewController {
 
     @IBAction func didTapFirstGridButton(_ sender: Any) {
         buttonView.style = .firstButton
+        currentView = firstGrid
         firstGrid.isHidden = false
         secondGrid.isHidden = true
         thirdGrid.isHidden = true
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
     
     @IBAction func didTapSecondGridButton(_ sender: Any) {
         buttonView.style = .secondButton
+        currentView = secondGrid
         firstGrid.isHidden = true
         secondGrid.isHidden = false
         thirdGrid.isHidden = true
@@ -44,12 +46,13 @@ class ViewController: UIViewController {
     
     @IBAction func didTapThirdGridButton(_ sender: Any) {
         buttonView.style = .thirdButton
+        currentView = thirdGrid
         firstGrid.isHidden = true
         secondGrid.isHidden = true
         thirdGrid.isHidden = false
     }
     
-//
+//Alert to display source choice : camera or library
     @objc func chooseImage() {
         let alert = UIAlertController(title: "Photo Source", message: "Please choose a source", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
@@ -63,20 +66,22 @@ class ViewController: UIViewController {
     }
     
     
-//Access photo library
+//Photo library access
     @objc private func libraryAccess() {
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
     }
   
-//Acces camera
+//Camera access (Bonus)
     @objc func cameraAccess() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
             imagePicker.allowsEditing = true
         }else {
-            print("Camera not available")
+            let alert = UIAlertController(title: "Sorry !", message: "Camera not available, select image in Library", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "I got it", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
         }
     }
     
@@ -96,7 +101,7 @@ class ViewController: UIViewController {
     
 //Share photos
     @objc private func sharePics() {
-        if let image = convertUIV(with: firstGrid) {
+        if let image = convertUIV(with: currentView!) {
             let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
             activityVC.popoverPresentationController?.sourceView = self.view
             
@@ -104,8 +109,9 @@ class ViewController: UIViewController {
         }
     }
     
-
+ 
 }
+ 
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

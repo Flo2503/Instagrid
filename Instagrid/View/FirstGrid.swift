@@ -12,6 +12,7 @@ class FirstGrid: UIView {
     
     var currentImageView: UIImageView?
 
+
     @IBOutlet weak var topCenterButton: UIButton!
     @IBOutlet weak var bottomRightButton: UIButton!
     @IBOutlet weak var bottomLeftButton: UIButton!
