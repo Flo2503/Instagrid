@@ -26,19 +26,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6V-Iz-MZr">
-                                <rect key="frame" x="107" y="43" width="161" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3pM-tr-aeu" customClass="Share" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="52" y="154" width="271" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojp-z8-q89">
-                                        <rect key="frame" x="0.0" y="-7" width="271" height="57"/>
+                                        <rect key="frame" x="55" y="-12" width="161" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="25"/>
                                         <state key="normal" title="Swipe Up To Share">
@@ -52,47 +45,270 @@
                                 <color key="backgroundColor" red="0.71820169690000002" green="0.84184938669999998" blue="0.89678025250000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.35892331599999999" green="0.55506426099999995" blue="0.78280556199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fj8-GR-EuX" userLabel="Grids">
+                                <rect key="frame" x="38" y="184" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pod-MK-1RG" userLabel="Third Grid" customClass="ThirdGrid" customModule="Instagrid" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVv-Xx-fuA" userLabel="Top Left Button">
+                                                <rect key="frame" x="14" y="14" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="didTapButtonTL:" destination="Pod-MK-1RG" eventType="touchUpInside" id="W7a-Kz-cbZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1L-d1-KLr" userLabel="Top Right Button">
+                                                <rect key="frame" x="158" y="14" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="didTapButtonTR:" destination="Pod-MK-1RG" eventType="touchUpInside" id="e7V-gR-saH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEh-4e-j9o" userLabel="Bottom Left Button">
+                                                <rect key="frame" x="14" y="155" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="didTapButttonBL:" destination="Pod-MK-1RG" eventType="touchUpInside" id="aTP-Bi-nEG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgc-te-0NU" userLabel="Bottom Right Button">
+                                                <rect key="frame" x="158" y="155" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="didTapButtonBR:" destination="Pod-MK-1RG" eventType="touchUpInside" id="WWv-5L-Idr"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="lNN-Qc-48b" userLabel="Top Left Image">
+                                                <rect key="frame" x="14" y="14" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="OXe-XK-wJ0">
+                                                <rect key="frame" x="57" y="57" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="fv2-u6-WMl" userLabel="Top Right Image">
+                                                <rect key="frame" x="158" y="14" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="4dz-5e-fkb">
+                                                <rect key="frame" x="201" y="57" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="ONn-rp-bEu" userLabel="Bottom Left Image">
+                                                <rect key="frame" x="14" y="155" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="hK7-V6-cIV" userLabel="Bottom Right Image">
+                                                <rect key="frame" x="158" y="155" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="Pgs-fs-G9W">
+                                                <rect key="frame" x="201" y="198" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="S9j-o8-p59">
+                                                <rect key="frame" x="57" y="198" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.15834364295005798" green="0.40798074007034302" blue="0.57901817560195923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="bottomLeftButton" destination="wEh-4e-j9o" id="y6e-am-y1R"/>
+                                            <outlet property="bottomLeftImage" destination="ONn-rp-bEu" id="yaZ-cI-hzt"/>
+                                            <outlet property="bottomRightButton" destination="wgc-te-0NU" id="rdX-mT-sMM"/>
+                                            <outlet property="bottomRightImage" destination="hK7-V6-cIV" id="Tyg-SQ-0o3"/>
+                                            <outlet property="topLeftButton" destination="EVv-Xx-fuA" id="01S-so-mpw"/>
+                                            <outlet property="topLeftImage" destination="lNN-Qc-48b" id="6Tu-Mk-ZX8"/>
+                                            <outlet property="topRightButton" destination="K1L-d1-KLr" id="l5y-OV-rdd"/>
+                                            <outlet property="topRightImage" destination="fv2-u6-WMl" id="bc2-Bq-hLE"/>
+                                        </connections>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihQ-1c-cpR" userLabel="First Grid" customClass="FirstGrid" customModule="Instagrid" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIl-LO-gBI" userLabel="Top Center Button">
+                                                <rect key="frame" x="15" y="14" width="270" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="didTapButtonTC:" destination="ihQ-1c-cpR" eventType="touchUpInside" id="Gvj-KB-lH6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5n-yT-Zbu" userLabel="Bottom Right Button">
+                                                <rect key="frame" x="157" y="156" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="didTapButtonBR:" destination="ihQ-1c-cpR" eventType="touchUpInside" id="Zpk-MO-FJX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="co9-r4-tr5" userLabel="Bottom Left Button">
+                                                <rect key="frame" x="15" y="156" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="didTapButtonBL:" destination="ihQ-1c-cpR" eventType="touchUpInside" id="lDN-sa-d3j"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 4" translatesAutoresizingMaskIntoConstraints="NO" id="VWe-Mw-bwU" userLabel="Top Center Image">
+                                                <rect key="frame" x="14" y="14" width="270" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="D3C-pI-yTV" userLabel="Bottom Left Image">
+                                                <rect key="frame" x="15" y="156" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="UXM-ot-brW" userLabel="Bottom Right Image">
+                                                <rect key="frame" x="157" y="156" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="O0X-Y9-oe8">
+                                                <rect key="frame" x="129" y="57" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="0aA-av-Tdz">
+                                                <rect key="frame" x="58" y="199" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="Z5E-OT-JQe">
+                                                <rect key="frame" x="200" y="199" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.15834364295005798" green="0.40798074007034302" blue="0.57901817560195923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="bottomLeftButton" destination="co9-r4-tr5" id="8Uh-s7-Azz"/>
+                                            <outlet property="bottomLetftImage" destination="D3C-pI-yTV" id="yMh-o1-bka"/>
+                                            <outlet property="bottomRightButton" destination="t5n-yT-Zbu" id="DA1-Qv-EeZ"/>
+                                            <outlet property="bottomRightImage" destination="UXM-ot-brW" id="Jql-F1-Wcn"/>
+                                            <outlet property="topCenterButton" destination="YIl-LO-gBI" id="8vO-rh-Wjj"/>
+                                            <outlet property="topCenterImage" destination="VWe-Mw-bwU" id="OeY-mI-b4Q"/>
+                                        </connections>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w2o-DM-NqH" userLabel="Second Grid" customClass="SecondGrid" customModule="Instagrid" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TL2-ga-ogp" userLabel="Top Left Button">
+                                                <rect key="frame" x="14" y="8" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="didTapButtonTL:" destination="w2o-DM-NqH" eventType="touchUpInside" id="6Jo-ZN-R4t"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XD6-MN-vU0" userLabel="Bottom Center Button">
+                                                <rect key="frame" x="14" y="157" width="270" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="didTapButtonBCWith_sender:" destination="w2o-DM-NqH" eventType="touchUpInside" id="1gs-3Q-3Wc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldn-pv-pOJ" userLabel="Top Right Button">
+                                                <rect key="frame" x="157" y="8" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="didTapButtonTRWith_sender:" destination="w2o-DM-NqH" eventType="touchUpInside" id="C5B-iI-xj0"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="CSK-Ot-k6B" userLabel="Top Left Image">
+                                                <rect key="frame" x="14" y="8" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="UW3-d7-l1G" userLabel="Top Right Image">
+                                                <rect key="frame" x="157" y="9" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 4" translatesAutoresizingMaskIntoConstraints="NO" id="ro5-CY-lzc" userLabel="Bottom Center Image">
+                                                <rect key="frame" x="14" y="157" width="270" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="bZT-BL-ygf">
+                                                <rect key="frame" x="130" y="200" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="3NW-Ak-y6e">
+                                                <rect key="frame" x="200" y="51" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="76M-01-NRA">
+                                                <rect key="frame" x="57" y="51" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.15834364295005798" green="0.40798074007034302" blue="0.57901817560195923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="bottomCenterButton" destination="XD6-MN-vU0" id="MH8-i5-FRv"/>
+                                            <outlet property="bottomCenterImage" destination="ro5-CY-lzc" id="bgu-hk-oxf"/>
+                                            <outlet property="topLeftButton" destination="TL2-ga-ogp" id="1jv-jj-Jl8"/>
+                                            <outlet property="topLeftImage" destination="CSK-Ot-k6B" id="7UD-jZ-oIz"/>
+                                            <outlet property="topRightButton" destination="ldn-pv-pOJ" id="Hgn-lS-xzi"/>
+                                            <outlet property="topRightImage" destination="UW3-d7-l1G" id="w57-WW-fCB"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lng-W1-w7r" customClass="ButtonView" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="12" y="512" width="350" height="99"/>
+                                <rect key="frame" x="16" y="511" width="343" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epH-Mf-pfY" userLabel="First Grid Button">
-                                        <rect key="frame" x="8" y="13" width="93" height="73"/>
+                                        <rect key="frame" x="8" y="13" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button1"/>
                                         <connections>
                                             <action selector="didTapFirstGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CC8-eQ-m6X"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnP-JU-JEx" userLabel="Second Grid Button">
-                                        <rect key="frame" x="129" y="14" width="93" height="72"/>
+                                        <rect key="frame" x="129" y="14" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button2"/>
                                         <connections>
                                             <action selector="didTapSecondGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kvp-sS-Ex4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opA-rB-XLW" userLabel="Third Grid Button">
-                                        <rect key="frame" x="249" y="13" width="93" height="72"/>
+                                        <rect key="frame" x="249" y="13" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button3"/>
                                         <connections>
                                             <action selector="didTapThirdGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JzE-Ov-NiT"/>
                                         </connections>
                                     </button>
-                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon Correct" translatesAutoresizingMaskIntoConstraints="NO" id="vw6-ub-4aa" userLabel="First Icon Correct">
-                                        <rect key="frame" x="8" y="10" width="93" height="76"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="uhH-xc-JSb">
+                                        <rect key="frame" x="8" y="13" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon Correct" translatesAutoresizingMaskIntoConstraints="NO" id="ppp-76-iDl" userLabel="Second Icon Correct">
-                                        <rect key="frame" x="129" y="13" width="93" height="76"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layout 3" translatesAutoresizingMaskIntoConstraints="NO" id="WK6-qn-CEW">
+                                        <rect key="frame" x="249" y="13" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon Correct" translatesAutoresizingMaskIntoConstraints="NO" id="uym-QB-DVp" userLabel="Third Icon Correct">
-                                        <rect key="frame" x="249" y="11" width="93" height="76"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layout 2" translatesAutoresizingMaskIntoConstraints="NO" id="cSv-zs-THV">
+                                        <rect key="frame" x="129" y="14" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="uym-QB-DVp" userLabel="Third Icon Correct">
+                                        <rect key="frame" x="249" y="14" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="vw6-ub-4aa" userLabel="First Icon Correct">
+                                        <rect key="frame" x="8" y="14" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="ppp-76-iDl" userLabel="Second Icon Correct">
+                                        <rect key="frame" x="129" y="13" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -103,173 +319,13 @@
                                     <outlet property="thirdIconCorrect" destination="uym-QB-DVp" id="KyZ-Xq-AOI"/>
                                 </connections>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihQ-1c-cpR" userLabel="First Grid" customClass="FirstGrid" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="52" y="211" width="271" height="245"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6V-Iz-MZr">
+                                <rect key="frame" x="128" y="46" width="119" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIl-LO-gBI" userLabel="Top Center Button">
-                                        <rect key="frame" x="8" y="8" width="255" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="didTapButtonTC:" destination="ihQ-1c-cpR" eventType="touchUpInside" id="Gvj-KB-lH6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5n-yT-Zbu" userLabel="Bottom Right Button">
-                                        <rect key="frame" x="141" y="128" width="122" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="didTapButtonBR:" destination="ihQ-1c-cpR" eventType="touchUpInside" id="Zpk-MO-FJX"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="co9-r4-tr5" userLabel="Bottom Left Button">
-                                        <rect key="frame" x="8" y="128" width="122" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="didTapButtonBL:" destination="ihQ-1c-cpR" eventType="touchUpInside" id="lDN-sa-d3j"/>
-                                        </connections>
-                                    </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VWe-Mw-bwU" userLabel="Top Center Image">
-                                        <rect key="frame" x="-8" y="8" width="288" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddSquare" translatesAutoresizingMaskIntoConstraints="NO" id="D3C-pI-yTV" userLabel="Bottom Left Image">
-                                        <rect key="frame" x="8" y="125" width="125" height="112"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddSquare" translatesAutoresizingMaskIntoConstraints="NO" id="UXM-ot-brW" userLabel="Bottom Right Image">
-                                        <rect key="frame" x="140" y="126" width="125" height="112"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="bottomLeftButton" destination="co9-r4-tr5" id="8Uh-s7-Azz"/>
-                                    <outlet property="bottomLetftImage" destination="D3C-pI-yTV" id="yMh-o1-bka"/>
-                                    <outlet property="bottomRightButton" destination="t5n-yT-Zbu" id="DA1-Qv-EeZ"/>
-                                    <outlet property="bottomRightImage" destination="UXM-ot-brW" id="Jql-F1-Wcn"/>
-                                    <outlet property="topCenterButton" destination="YIl-LO-gBI" id="8vO-rh-Wjj"/>
-                                    <outlet property="topCenterImage" destination="VWe-Mw-bwU" id="OeY-mI-b4Q"/>
-                                </connections>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pod-MK-1RG" userLabel="Third Grid" customClass="ThirdGrid" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="52" y="211" width="271" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVv-Xx-fuA" userLabel="Top Left Button">
-                                        <rect key="frame" x="8" y="8" width="122" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="didTapButtonTL:" destination="Pod-MK-1RG" eventType="touchUpInside" id="W7a-Kz-cbZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1L-d1-KLr" userLabel="Top Right Button">
-                                        <rect key="frame" x="141" y="8" width="122" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="didTapButtonTR:" destination="Pod-MK-1RG" eventType="touchUpInside" id="e7V-gR-saH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEh-4e-j9o" userLabel="Bottom Left Button">
-                                        <rect key="frame" x="8" y="128" width="122" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="didTapButttonBL:" destination="Pod-MK-1RG" eventType="touchUpInside" id="aTP-Bi-nEG"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgc-te-0NU" userLabel="Bottom Right Button">
-                                        <rect key="frame" x="141" y="128" width="122" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="didTapButtonBR:" destination="Pod-MK-1RG" eventType="touchUpInside" id="WWv-5L-Idr"/>
-                                        </connections>
-                                    </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddSquare" translatesAutoresizingMaskIntoConstraints="NO" id="hK7-V6-cIV" userLabel="Bottom Right Image">
-                                        <rect key="frame" x="140" y="126" width="125" height="112"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddSquare" translatesAutoresizingMaskIntoConstraints="NO" id="ONn-rp-bEu" userLabel="Bottom Left Image">
-                                        <rect key="frame" x="7" y="126" width="125" height="112"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddSquare" translatesAutoresizingMaskIntoConstraints="NO" id="fv2-u6-WMl" userLabel="Top Right Image">
-                                        <rect key="frame" x="138" y="8" width="125" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddSquare" translatesAutoresizingMaskIntoConstraints="NO" id="lNN-Qc-48b" userLabel="Top Left Image">
-                                        <rect key="frame" x="8" y="8" width="125" height="112"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="bottomLeftButton" destination="wEh-4e-j9o" id="y6e-am-y1R"/>
-                                    <outlet property="bottomLeftImage" destination="ONn-rp-bEu" id="yaZ-cI-hzt"/>
-                                    <outlet property="bottomRightButton" destination="wgc-te-0NU" id="rdX-mT-sMM"/>
-                                    <outlet property="bottomRightImage" destination="hK7-V6-cIV" id="Tyg-SQ-0o3"/>
-                                    <outlet property="topLeftButton" destination="EVv-Xx-fuA" id="01S-so-mpw"/>
-                                    <outlet property="topLeftImage" destination="lNN-Qc-48b" id="6Tu-Mk-ZX8"/>
-                                    <outlet property="topRightButton" destination="K1L-d1-KLr" id="l5y-OV-rdd"/>
-                                    <outlet property="topRightImage" destination="fv2-u6-WMl" id="bc2-Bq-hLE"/>
-                                </connections>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w2o-DM-NqH" userLabel="Second Grid" customClass="SecondGrid" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="52" y="211" width="271" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TL2-ga-ogp" userLabel="Top Left Button">
-                                        <rect key="frame" x="8" y="8" width="122" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="didTapButtonTL:" destination="w2o-DM-NqH" eventType="touchUpInside" id="6Jo-ZN-R4t"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldn-pv-pOJ" userLabel="Top Right Button">
-                                        <rect key="frame" x="141" y="8" width="122" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="didTapButtonTRWith_sender:" destination="w2o-DM-NqH" eventType="touchUpInside" id="C5B-iI-xj0"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XD6-MN-vU0" userLabel="Bottom Center Button">
-                                        <rect key="frame" x="8" y="128" width="255" height="109"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="didTapButtonBCWith_sender:" destination="w2o-DM-NqH" eventType="touchUpInside" id="1gs-3Q-3Wc"/>
-                                        </connections>
-                                    </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddSquare" translatesAutoresizingMaskIntoConstraints="NO" id="CSK-Ot-k6B" userLabel="Top Left Image">
-                                        <rect key="frame" x="8" y="6" width="122" height="112"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ro5-CY-lzc" userLabel="Bottom Center Image">
-                                        <rect key="frame" x="8" y="126" width="255" height="112"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddSquare" translatesAutoresizingMaskIntoConstraints="NO" id="UW3-d7-l1G" userLabel="Top Right Image">
-                                        <rect key="frame" x="140" y="6" width="123" height="112"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="bottomCenterButton" destination="XD6-MN-vU0" id="MH8-i5-FRv"/>
-                                    <outlet property="bottomCenterImage" destination="ro5-CY-lzc" id="bgu-hk-oxf"/>
-                                    <outlet property="topLeftButton" destination="TL2-ga-ogp" id="1jv-jj-Jl8"/>
-                                    <outlet property="topLeftImage" destination="CSK-Ot-k6B" id="7UD-jZ-oIz"/>
-                                    <outlet property="topRightButton" destination="ldn-pv-pOJ" id="Hgn-lS-xzi"/>
-                                    <outlet property="topRightImage" destination="UW3-d7-l1G" id="w57-WW-fCB"/>
-                                </connections>
-                            </view>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.71820169687271118" green="0.84184938669204712" blue="0.89678025245666504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -281,6 +337,9 @@
                         <outlet property="firstGrid" destination="ihQ-1c-cpR" id="fU3-ay-xNn"/>
                         <outlet property="secondGrid" destination="w2o-DM-NqH" id="jNm-MX-Xw5"/>
                         <outlet property="thirdGrid" destination="Pod-MK-1RG" id="xfk-qM-5e0"/>
+                        <outletCollection property="firstGridImages" destination="D3C-pI-yTV" collectionClass="NSMutableArray" id="gz2-8N-IFi"/>
+                        <outletCollection property="firstGridImages" destination="VWe-Mw-bwU" collectionClass="NSMutableArray" id="tJ6-fz-kVK"/>
+                        <outletCollection property="firstGridImages" destination="UXM-ot-brW" collectionClass="NSMutableArray" id="ZEn-RH-kf6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -289,8 +348,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AddLarge" width="172" height="79"/>
-        <image name="AddSquare" width="80" height="81"/>
-        <image name="Icon Correct" width="36" height="35"/>
+        <image name="Combined Shape" width="48" height="48"/>
+        <image name="Layout 1" width="80" height="80"/>
+        <image name="Layout 2" width="80" height="80"/>
+        <image name="Layout 3" width="80" height="80"/>
+        <image name="Rectangle 3" width="136" height="136"/>
+        <image name="Rectangle 4" width="278" height="136"/>
+        <image name="Selected" width="80" height="80"/>
     </resources>
 </document>
