@@ -17,7 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="GdH-Ni-f7o">
+                                <rect key="frame" x="97.5" y="243.5" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GdH-Ni-f7o" secondAttribute="height" multiplier="1:1" id="S1A-AH-Was"/>
+                                    <constraint firstAttribute="width" constant="180" id="oSL-0o-cJ3"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.73360037803649902" green="0.8381618857383728" blue="0.88615113496780396" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GdH-Ni-f7o" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4qV-qA-y2Q"/>
+                            <constraint firstItem="GdH-Ni-f7o" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Lm0-aC-idg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +39,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon" width="180" height="180"/>
+    </resources>
 </document>
