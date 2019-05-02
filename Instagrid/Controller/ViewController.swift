@@ -11,51 +11,67 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var buttonView: ButtonView!
-    @IBOutlet weak var firstGrid: FirstGrid!
-    @IBOutlet weak var secondGrid: SecondGrid!
-    @IBOutlet weak var thirdGrid: ThirdGrid!
+    @IBOutlet weak var currentView: CurrentView!
     
-    @IBOutlet var firstGridImages: [UIImageView]!
-    
-
     private var imagePicker = UIImagePickerController()
-    private var currentView = UIView()
-        
+    private var orientation = UIDevice.current.orientation
+    private var swipeGestureRecognizer: UISwipeGestureRecognizer?
+    
+   
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(chooseImage), name: NSNotification.Name("tapOnGridButtons"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(shareGrid), name: NSNotification.Name("swipeToShare"), object: nil)
-        didTapFirstGridButton(self)
+        setUpObserver()
+        buttonView.firstButtonClick(self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupSwipeDirection()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        setupSwipeDirection()
+    }
 
-    @IBAction func didTapFirstGridButton(_ sender: Any) {
-        buttonView.style = .firstButton
-        currentView = firstGrid
-        firstGrid.isHidden = false
-        secondGrid.isHidden = true
-        thirdGrid.isHidden = true
-        
+  
+    
+    
+    
+    private func setUpObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(chooseImage), name: NSNotification.Name("tapOnGridButtons"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(swipeAction),name: NSNotification.Name("swipeToShare"), object: nil)
     }
     
-    @IBAction func didTapSecondGridButton(_ sender: Any) {
-        buttonView.style = .secondButton
-        currentView = secondGrid
-        firstGrid.isHidden = true
-        secondGrid.isHidden = false
-        thirdGrid.isHidden = true
+    private func setupSwipeDirection() {
+        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+            swipeGestureRecognizer?.direction = .left
+        } else {
+            swipeGestureRecognizer?.direction = .up
+            print("*************** up")
+        }
     }
     
-    @IBAction func didTapThirdGridButton(_ sender: Any) {
-        buttonView.style = .thirdButton
-        currentView = thirdGrid
-        firstGrid.isHidden = true
-        secondGrid.isHidden = true
-        thirdGrid.isHidden = false
+    func tranformApplicationsView() {
+        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+            UIView.animate(withDuration: 2.0, animations: {
+                self.currentView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
+            })
+        } else {
+            UIView.animate(withDuration: 2.0, animations: {
+                self.currentView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
+            })
+        }
     }
     
+    
+    @objc func swipeAction() {
+        tranformApplicationsView()
+        shareGrid()
+    }
     
     
 //Alert to display source choice : camera or library
@@ -87,7 +103,7 @@ class ViewController: UIViewController {
             imagePicker.allowsEditing = true
         }else {
             let alert = UIAlertController(title: "Sorry !", message: "Camera not available, select image in Library", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "I got it 👌", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Got it 👌", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
     }
@@ -107,8 +123,16 @@ class ViewController: UIViewController {
     
     
     
+    
+    
 //Share photos
     @objc private func shareGrid() {
+        guard currentView.isAllImageSelected() else {
+            let alert = UIAlertController(title: "Sorry !", message: "Please select all images before sharing", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Got it 👌", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
         if let image = convertUIV(with: currentView) {
             let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
             activityVC.popoverPresentationController?.sourceView = self.view
@@ -118,6 +142,7 @@ class ViewController: UIViewController {
         
     }
     
+   
     
  
 }
@@ -128,18 +153,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             
-            switch buttonView.style {
-            case .firstButton:
-                firstGrid.currentImageView?.image = image
-                break
-            case .secondButton:
-                secondGrid.currentImageView?.image = image
-                break
-            case .thirdButton:
-                thirdGrid.currentImageView?.image = image
-                break
-                
-            }
+            currentView.setImage(image: image)
 
     }
         

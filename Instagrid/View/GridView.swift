@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+class GridView: UIView {
+    
+    func isAllImageSelected() -> Bool {
+        return false
+    }
+    
+    func setImage(image: UIImage) {
+    }
+    
+}

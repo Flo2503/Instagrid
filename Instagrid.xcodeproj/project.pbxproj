@@ -19,6 +19,8 @@
 		5C9F4D3722403EC3009EDA16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F4D3522403EC3009EDA16 /* LaunchScreen.storyboard */; };
 		5C9F4D4522404CC6009EDA16 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F4D4322404CC6009EDA16 /* ThirstySoftRegular.otf */; };
 		5C9F4D4622404CC6009EDA16 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F4D4422404CC6009EDA16 /* Delm-Medium.otf */; };
+		5CFBFA55226E2712008FCEAB /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFBFA54226E2712008FCEAB /* GridView.swift */; };
+		5CFBFA57226E2915008FCEAB /* CurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFBFA56226E2915008FCEAB /* CurrentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		5C9F4D3822403EC3009EDA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C9F4D4322404CC6009EDA16 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		5C9F4D4422404CC6009EDA16 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
+		5CFBFA54226E2712008FCEAB /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		5CFBFA56226E2915008FCEAB /* CurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +98,9 @@
 				5C9F4D3022403EC1009EDA16 /* Main.storyboard */,
 				5C531B32224C3564005D34E6 /* ButtonView.swift */,
 				5C192621225A3B9700119BD5 /* Share.swift */,
+				5CFBFA56226E2915008FCEAB /* CurrentView.swift */,
 				5C38EDAA22516D4E008563E2 /* FirstGrid.swift */,
+				5CFBFA54226E2712008FCEAB /* GridView.swift */,
 				5C9789A22253C8EC00470C4F /* SecondGrid.swift */,
 				5C9789A42253C96200470C4F /* ThirdGrid.swift */,
 			);
@@ -187,7 +193,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C9F4D2F22403EC1009EDA16 /* ViewController.swift in Sources */,
+				5CFBFA57226E2915008FCEAB /* CurrentView.swift in Sources */,
 				5C9F4D2D22403EC1009EDA16 /* AppDelegate.swift in Sources */,
+				5CFBFA55226E2712008FCEAB /* GridView.swift in Sources */,
 				5C192622225A3B9700119BD5 /* Share.swift in Sources */,
 				5C9789A52253C96200470C4F /* ThirdGrid.swift in Sources */,
 				5C9789A32253C8EC00470C4F /* SecondGrid.swift in Sources */,

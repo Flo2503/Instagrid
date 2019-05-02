@@ -10,17 +10,40 @@ import UIKit
 
 class ButtonView: UIView {
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
        
     @IBOutlet weak var firstIconCorrect: UIView!
     @IBOutlet weak var secondIconCorrect: UIView!
     @IBOutlet weak var thirdIconCorrect: UIView!
-   
     
-    enum ButtonStyle {
+    
+    @IBAction func firstButtonClick(_ sender: Any) {
+        style = .firstButton
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "firstButtonClick"), object: nil)
+    }
+    
+    @IBAction func secondButtonClick(_ sender: Any) {
+        style = .secondButton
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "secondButtonClick"), object: nil)
+    }
+    
+    @IBAction func thirdButtonClick(_ sender: Any) {
+        style = .thirdButton
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "thirdButtonClick"), object: nil)
+    }
+    
+    
+    private enum ButtonStyle {
         case firstButton, secondButton, thirdButton
     }
     
-    var style: ButtonStyle = .firstButton {
+    private var style: ButtonStyle = .firstButton {
         didSet {
             setStyle(style)
         }
@@ -44,6 +67,7 @@ class ButtonView: UIView {
     }
 
 
+    
 }
     
     

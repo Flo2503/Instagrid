@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThirdGrid: UIView {
+class ThirdGrid: GridView {
     
     var currentImageView: UIImageView?
 
@@ -43,6 +43,12 @@ class ThirdGrid: UIView {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "tapOnGridButtons"), object: nil)
     }
 
-
+    override func isAllImageSelected() -> Bool {
+        return bottomRightImage.image != nil && bottomLeftImage.image != nil && topLeftImage.image != nil && topRightImage.image != nil
+    }
+    
+    override func setImage(image: UIImage) {
+        currentImageView?.image = image
+    }
 
 }

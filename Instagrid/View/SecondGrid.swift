@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondGrid: UIView {
+class SecondGrid: GridView {
     
     var currentImageView: UIImageView?
 
@@ -33,6 +33,14 @@ class SecondGrid: UIView {
     @IBAction func didTapButtonBC(_sender: UIButton) {
         currentImageView = bottomCenterImage
         NotificationCenter.default.post(name: Notification.Name(rawValue: "tapOnGridButtons"), object: nil)
+    }
+    
+    override func isAllImageSelected() -> Bool {
+        return topLeftImage.image != nil && bottomCenterImage.image != nil && topRightImage.image != nil
+    }
+    
+    override func setImage(image: UIImage) {
+        currentImageView?.image = image
     }
 
 }

@@ -10,8 +10,18 @@ import UIKit
 
 class Share: UIView {
 
-    @IBAction func didTapButton(_ sender: UIButton) {
+  
+    
+    
+    @IBAction func swipeToShare(_ sender: UISwipeGestureRecognizer) {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "swipeToShare"), object: nil)
+        
     }
     
+    
+    
+    
+    
+    
 }
+

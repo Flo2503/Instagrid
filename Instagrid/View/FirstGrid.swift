@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstGrid: UIView {
+class FirstGrid: GridView {
     
     var currentImageView: UIImageView?
 
@@ -37,4 +37,11 @@ class FirstGrid: UIView {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "tapOnGridButtons"), object: nil)
     }
     
+    override func isAllImageSelected() -> Bool {
+        return topCenterImage.image != nil && bottomLetftImage.image != nil && bottomRightImage.image != nil
+    }
+    
+    override func setImage(image: UIImage) {
+        currentImageView?.image = image
+    }
 }
