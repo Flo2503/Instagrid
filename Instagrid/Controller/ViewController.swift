@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         setupSwipeDirection()
     }
 
+    
   
     
     
@@ -46,6 +47,8 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(chooseImage), name: NSNotification.Name("tapOnGridButtons"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(shareGrid),name: NSNotification.Name("swipeToShare"), object: nil)
     }
+    
+    
     
     private func setupSwipeDirection() {
         if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
