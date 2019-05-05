@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var buttonView: ButtonView!
     @IBOutlet weak var currentView: CurrentView!
+    @IBOutlet weak var shareView: Share!
     
     private var imagePicker = UIImagePickerController()
     private var orientation = UIDevice.current.orientation
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
         imagePicker.delegate = self
         setUpObserver()
         buttonView.firstButtonClick(self)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,10 +42,9 @@ class ViewController: UIViewController {
   
     
     
-    
     private func setUpObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(chooseImage), name: NSNotification.Name("tapOnGridButtons"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(swipeAction),name: NSNotification.Name("swipeToShare"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(shareGrid),name: NSNotification.Name("swipeToShare"), object: nil)
     }
     
     private func setupSwipeDirection() {
@@ -67,11 +68,7 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    @objc func swipeAction() {
-        tranformApplicationsView()
-        shareGrid()
-    }
+
     
     
 //Alert to display source choice : camera or library
@@ -134,19 +131,22 @@ class ViewController: UIViewController {
             return
         }
         if let image = convertUIV(with: currentView) {
+            tranformApplicationsView()
             let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
             activityVC.popoverPresentationController?.sourceView = self.view
-            
             self.present(activityVC, animated: true, completion: nil)
+            activityVC.completionWithItemsHandler = { _ , _ , _, _ in
+                UIView.animate(withDuration: 2.0, animations: {
+                    self.currentView.transform = .identity
+                })
+            }
         }
-        
+
     }
     
-   
-    
  
+
 }
- 
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

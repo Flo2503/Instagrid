@@ -10,7 +10,6 @@ import UIKit
 
 class Share: UIView {
 
-  
     
     
     @IBAction func swipeToShare(_ sender: UISwipeGestureRecognizer) {
@@ -18,7 +17,7 @@ class Share: UIView {
         
     }
     
-    
+   
     
     
     
