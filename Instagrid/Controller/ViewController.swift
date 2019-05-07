@@ -13,12 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonView: ButtonView!
     @IBOutlet weak var currentView: CurrentView!
     @IBOutlet weak var shareView: Share!
+    @IBOutlet var swipeGesture: UISwipeGestureRecognizer!
     
     private var imagePicker = UIImagePickerController()
-    private var orientation = UIDevice.current.orientation
-    private var swipeGestureRecognizer: UISwipeGestureRecognizer?
     
-   
     
 
     override func viewDidLoad() {
@@ -32,11 +30,14 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupSwipeDirection()
+        shareView.swipeOrientation()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         setupSwipeDirection()
+        shareView.swipeOrientation()
+
     }
 
     
@@ -51,11 +52,10 @@ class ViewController: UIViewController {
     
     
     private func setupSwipeDirection() {
-        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
-            swipeGestureRecognizer?.direction = .left
+        if UIDevice.current.orientation.isLandscape {
+            swipeGesture.direction = .left
         } else {
-            swipeGestureRecognizer?.direction = .up
-            print("*************** up")
+            swipeGesture.direction = .up
         }
     }
     
@@ -147,7 +147,6 @@ class ViewController: UIViewController {
 
     }
     
- 
 
 }
 
