@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonView: ButtonView!
     @IBOutlet weak var currentView: CurrentView!
     @IBOutlet weak var shareView: Share!
-    @IBOutlet var swipeGesture: UISwipeGestureRecognizer!
     
     private var imagePicker = UIImagePickerController()
     
@@ -29,21 +28,17 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupSwipeDirection()
         shareView.swipeOrientation()
+        
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        setupSwipeDirection()
         shareView.swipeOrientation()
 
     }
 
-    
-  
-    
-    
+// Listeners
     private func setUpObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(chooseImage), name: NSNotification.Name("tapOnGridButtons"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(shareGrid),name: NSNotification.Name("swipeToShare"), object: nil)
@@ -51,44 +46,9 @@ class ViewController: UIViewController {
     
     
     
-    private func setupSwipeDirection() {
-        if UIDevice.current.orientation.isLandscape {
-            swipeGesture.direction = .left
-        } else {
-            swipeGesture.direction = .up
-        }
-    }
+   
     
-    func tranformApplicationsView() {
-        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
-            UIView.animate(withDuration: 2.0, animations: {
-                self.currentView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
-            })
-        } else {
-            UIView.animate(withDuration: 2.0, animations: {
-                self.currentView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
-            })
-        }
-    }
-    
-
-    
-    
-//Alert to display source choice : camera or library
-    @objc func chooseImage() {
-        let alert = UIAlertController(title: "Photo Source", message: "Please choose a source", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Camera 📷", style: .default, handler: { _ in
-            self.cameraAccess()
-        }))
-        alert.addAction(UIAlertAction(title: "Library 🗂️", style: .default, handler: { _ in
-            self.libraryAccess()
-        }))
-        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    
-//Photo library access
+// Photo library access
     @objc private func libraryAccess() {
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
@@ -96,8 +56,8 @@ class ViewController: UIViewController {
     }
     
   
-//Camera access (Bonus)
-    @objc func cameraAccess() {
+// Camera access (Bonus)
+    @objc private func cameraAccess() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
             imagePicker.allowsEditing = true
@@ -108,9 +68,23 @@ class ViewController: UIViewController {
         }
     }
     
+// Alert to display source choice : camera or library
+    @objc private func chooseImage() {
+        let alert = UIAlertController(title: "Photo Source", message: "Please choose a source", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera 📷", style: .default, handler: { _ in
+            self.cameraAccess()
+        }))
+        alert.addAction(UIAlertAction(title: "Library 🗂️", style: .default, handler: { _ in
+            self.libraryAccess()
+        }))
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
     
-//Convert UIView to UIImage
-    func convertUIV(with view: UIView) -> UIImage? {
+    
+// Convert UIView to UIImage
+    private func convertUIV(with view: UIView) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
         defer { UIGraphicsEndImageContext() }
         if let context = UIGraphicsGetCurrentContext() {
@@ -120,12 +94,23 @@ class ViewController: UIViewController {
         }
         return nil
     }
+
     
+// Grid animation when swipe to share
+    private func transformCurrentView() {
+        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+            UIView.animate(withDuration: 2.0, animations: {
+                self.currentView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
+            })
+        } else {
+            UIView.animate(withDuration: 2.0, animations: {
+                self.currentView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
+            })
+        }
+    }
+
     
-    
-    
-    
-//Share photos
+// Share grids if all iamges are selected and then animate the grid
     @objc private func shareGrid() {
         guard currentView.isAllImageSelected() else {
             let alert = UIAlertController(title: "Sorry !", message: "Please select all images before sharing", preferredStyle: .alert)
@@ -134,7 +119,7 @@ class ViewController: UIViewController {
             return
         }
         if let image = convertUIV(with: currentView) {
-            tranformApplicationsView()
+            transformCurrentView()
             let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
             activityVC.popoverPresentationController?.sourceView = self.view
             self.present(activityVC, animated: true, completion: nil)
@@ -149,7 +134,7 @@ class ViewController: UIViewController {
     
 
 }
-
+// Extension
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

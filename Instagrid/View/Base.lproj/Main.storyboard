@@ -140,6 +140,7 @@
                                 </variation>
                                 <connections>
                                     <outlet property="label" destination="wug-pj-SoW" id="yTT-yW-HCV"/>
+                                    <outlet property="swipeGesture" destination="nCN-w2-5BA" id="Yyv-kI-fqV"/>
                                     <outlet property="swipeIcon" destination="sc8-T0-xio" id="NUE-TM-U4Y"/>
                                     <outletCollection property="gestureRecognizers" destination="nCN-w2-5BA" appends="YES" id="6UF-PA-LC2"/>
                                 </connections>
@@ -543,11 +544,8 @@
                                             <constraint firstItem="t5n-yT-Zbu" firstAttribute="top" secondItem="VWe-Mw-bwU" secondAttribute="bottom" constant="15" id="w4J-tM-jhH"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="bottomLeftButton" destination="co9-r4-tr5" id="8Uh-s7-Azz"/>
                                             <outlet property="bottomLetftImage" destination="D3C-pI-yTV" id="yMh-o1-bka"/>
-                                            <outlet property="bottomRightButton" destination="t5n-yT-Zbu" id="DA1-Qv-EeZ"/>
                                             <outlet property="bottomRightImage" destination="UXM-ot-brW" id="Jql-F1-Wcn"/>
-                                            <outlet property="topCenterButton" destination="YIl-LO-gBI" id="8vO-rh-Wjj"/>
                                             <outlet property="topCenterImage" destination="VWe-Mw-bwU" id="OeY-mI-b4Q"/>
                                         </connections>
                                     </view>
@@ -655,13 +653,9 @@
                                             <constraint firstItem="wgc-te-0NU" firstAttribute="leading" secondItem="ONn-rp-bEu" secondAttribute="trailing" constant="15" id="zab-CA-rrZ"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="bottomLeftButton" destination="wEh-4e-j9o" id="y6e-am-y1R"/>
                                             <outlet property="bottomLeftImage" destination="ONn-rp-bEu" id="yaZ-cI-hzt"/>
-                                            <outlet property="bottomRightButton" destination="wgc-te-0NU" id="rdX-mT-sMM"/>
                                             <outlet property="bottomRightImage" destination="hK7-V6-cIV" id="Tyg-SQ-0o3"/>
-                                            <outlet property="topLeftButton" destination="EVv-Xx-fuA" id="01S-so-mpw"/>
                                             <outlet property="topLeftImage" destination="lNN-Qc-48b" id="6Tu-Mk-ZX8"/>
-                                            <outlet property="topRightButton" destination="K1L-d1-KLr" id="l5y-OV-rdd"/>
                                             <outlet property="topRightImage" destination="fv2-u6-WMl" id="bc2-Bq-hLE"/>
                                         </connections>
                                     </view>
@@ -742,11 +736,8 @@
                                             <constraint firstItem="ro5-CY-lzc" firstAttribute="top" secondItem="CSK-Ot-k6B" secondAttribute="bottom" constant="15" id="uyd-WK-Fy1"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="bottomCenterButton" destination="XD6-MN-vU0" id="MH8-i5-FRv"/>
                                             <outlet property="bottomCenterImage" destination="ro5-CY-lzc" id="bgu-hk-oxf"/>
-                                            <outlet property="topLeftButton" destination="TL2-ga-ogp" id="1jv-jj-Jl8"/>
                                             <outlet property="topLeftImage" destination="CSK-Ot-k6B" id="7UD-jZ-oIz"/>
-                                            <outlet property="topRightButton" destination="ldn-pv-pOJ" id="Hgn-lS-xzi"/>
                                             <outlet property="topRightImage" destination="UW3-d7-l1G" id="w57-WW-fCB"/>
                                         </connections>
                                     </view>
@@ -828,15 +819,15 @@
                             <mask key="constraints">
                                 <exclude reference="Qwq-fY-iIE"/>
                                 <exclude reference="ew5-J9-SvC"/>
-                                <exclude reference="AD6-Xz-1qb"/>
-                                <exclude reference="LTr-0E-z6O"/>
-                                <exclude reference="NvJ-D7-E5L"/>
-                                <exclude reference="jWs-6X-PaL"/>
                                 <exclude reference="ACQ-19-kut"/>
                                 <exclude reference="Z1F-vI-ztT"/>
                                 <exclude reference="ggh-2M-QRR"/>
                                 <exclude reference="pQ3-Dm-GEj"/>
                                 <exclude reference="xhF-er-W6X"/>
+                                <exclude reference="AD6-Xz-1qb"/>
+                                <exclude reference="LTr-0E-z6O"/>
+                                <exclude reference="NvJ-D7-E5L"/>
+                                <exclude reference="jWs-6X-PaL"/>
                                 <exclude reference="1ep-Lj-t85"/>
                                 <exclude reference="593-4l-fhy"/>
                                 <exclude reference="A6E-ip-dJ4"/>
@@ -859,11 +850,6 @@
                                 <include reference="ew5-J9-SvC"/>
                                 <exclude reference="niW-Td-NVO"/>
                                 <exclude reference="okK-t3-3ft"/>
-                                <include reference="AD6-Xz-1qb"/>
-                                <exclude reference="FmR-yQ-jZM"/>
-                                <exclude reference="LTr-0E-z6O"/>
-                                <exclude reference="NvJ-D7-E5L"/>
-                                <exclude reference="jWs-6X-PaL"/>
                                 <exclude reference="ACQ-19-kut"/>
                                 <exclude reference="EY9-fz-MEl"/>
                                 <exclude reference="Z1F-vI-ztT"/>
@@ -871,6 +857,11 @@
                                 <exclude reference="ggh-2M-QRR"/>
                                 <include reference="pQ3-Dm-GEj"/>
                                 <include reference="xhF-er-W6X"/>
+                                <include reference="AD6-Xz-1qb"/>
+                                <exclude reference="FmR-yQ-jZM"/>
+                                <exclude reference="LTr-0E-z6O"/>
+                                <exclude reference="NvJ-D7-E5L"/>
+                                <exclude reference="jWs-6X-PaL"/>
                                 <exclude reference="1ep-Lj-t85"/>
                                 <include reference="593-4l-fhy"/>
                                 <exclude reference="A6E-ip-dJ4"/>
@@ -900,7 +891,6 @@
                         <outlet property="buttonView" destination="lng-W1-w7r" id="98k-38-SQV"/>
                         <outlet property="currentView" destination="Fj8-GR-EuX" id="b2z-Vg-HSj"/>
                         <outlet property="shareView" destination="3pM-tr-aeu" id="NwS-IX-dCQ"/>
-                        <outlet property="swipeGesture" destination="nCN-w2-5BA" id="xzP-dd-RIo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

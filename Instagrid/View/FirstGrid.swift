@@ -12,10 +12,6 @@ class FirstGrid: GridView {
     
     var currentImageView: UIImageView?
 
-
-    @IBOutlet weak var topCenterButton: UIButton!
-    @IBOutlet weak var bottomRightButton: UIButton!
-    @IBOutlet weak var bottomLeftButton: UIButton!
     
     @IBOutlet weak var topCenterImage: UIImageView!
     @IBOutlet weak var bottomLetftImage: UIImageView!

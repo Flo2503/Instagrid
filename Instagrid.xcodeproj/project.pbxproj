@@ -99,8 +99,8 @@
 				5C531B32224C3564005D34E6 /* ButtonView.swift */,
 				5C192621225A3B9700119BD5 /* Share.swift */,
 				5CFBFA56226E2915008FCEAB /* CurrentView.swift */,
-				5C38EDAA22516D4E008563E2 /* FirstGrid.swift */,
 				5CFBFA54226E2712008FCEAB /* GridView.swift */,
+				5C38EDAA22516D4E008563E2 /* FirstGrid.swift */,
 				5C9789A22253C8EC00470C4F /* SecondGrid.swift */,
 				5C9789A42253C96200470C4F /* ThirdGrid.swift */,
 			);

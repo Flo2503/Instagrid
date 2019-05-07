@@ -12,10 +12,6 @@ class ThirdGrid: GridView {
     
     var currentImageView: UIImageView?
 
-    @IBOutlet weak var topLeftButton: UIButton!
-    @IBOutlet weak var topRightButton: UIButton!
-    @IBOutlet weak var bottomLeftButton: UIButton!
-    @IBOutlet weak var bottomRightButton: UIButton!
     
     @IBOutlet weak var bottomRightImage: UIImageView!
     @IBOutlet weak var bottomLeftImage: UIImageView!
