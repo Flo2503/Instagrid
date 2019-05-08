@@ -61,6 +61,7 @@ class ViewController: UIViewController {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
             imagePicker.allowsEditing = true
+            present(imagePicker, animated: true, completion: nil)
         }else {
             let alert = UIAlertController(title: "Sorry !", message: "Camera not available, select image in Library", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Got it 👌", style: .default, handler: nil))
