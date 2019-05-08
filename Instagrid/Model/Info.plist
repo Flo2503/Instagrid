@@ -25,9 +25,11 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>Instagrid needs to access the camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>Instagrid needs to access the library</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Instagrid needs to access the library</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
