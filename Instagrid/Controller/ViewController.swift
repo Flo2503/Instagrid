@@ -10,12 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK : -  Outlet
     @IBOutlet weak var buttonView: ButtonView!
     @IBOutlet weak var currentView: CurrentView!
     @IBOutlet weak var shareView: Share!
     
+    // MARK: - Properties
     private var imagePicker = UIImagePickerController()
-    
     
 
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
         imagePicker.delegate = self
         setUpObserver()
         buttonView.firstButtonClick(self)
+        shareView.swipeOrientation()
         
     }
     
@@ -38,7 +40,8 @@ class ViewController: UIViewController {
 
     }
 
-// Listeners
+    
+    // MARK: - Methods
     private func setUpObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(chooseImage), name: NSNotification.Name("tapOnGridButtons"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(shareGrid),name: NSNotification.Name("swipeToShare"), object: nil)
@@ -46,9 +49,7 @@ class ViewController: UIViewController {
     
     
     
-   
-    
-// Photo library access
+    // Photo library access
     @objc private func libraryAccess() {
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
     }
     
   
-// Camera access (Bonus)
+    // Camera access (Bonus)
     @objc private func cameraAccess() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
@@ -69,7 +70,8 @@ class ViewController: UIViewController {
         }
     }
     
-// Alert to display source choice : camera or library
+    
+    // Alert to display source choice : camera or library
     @objc private func chooseImage() {
         let alert = UIAlertController(title: "Photo Source", message: "Please choose a source", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera 📷", style: .default, handler: { _ in
@@ -84,7 +86,7 @@ class ViewController: UIViewController {
 
     
     
-// Convert UIView to UIImage
+    // Convert UIView to UIImage
     private func convertUIV(with view: UIView) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
         defer { UIGraphicsEndImageContext() }
@@ -97,7 +99,7 @@ class ViewController: UIViewController {
     }
 
     
-// Grid animation when swipe to share
+    // Grid animation when swipe to share
     private func transformCurrentView() {
         if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
             UIView.animate(withDuration: 2.0, animations: {
@@ -111,7 +113,7 @@ class ViewController: UIViewController {
     }
 
     
-// Share grids if all iamges are selected and then animate the grid
+    // Share grids if all iamges are selected and then animate the grid
     @objc private func shareGrid() {
         guard currentView.isAllImageSelected() else {
             let alert = UIAlertController(title: "Sorry !", message: "Please select all images before sharing", preferredStyle: .alert)

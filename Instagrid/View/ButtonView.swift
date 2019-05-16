@@ -11,27 +11,26 @@ import UIKit
 class ButtonView: UIView {
 
     
-// Outlets
+    // MARK: - Outlets
     @IBOutlet weak var firstIconCorrect: UIView!
     @IBOutlet weak var secondIconCorrect: UIView!
     @IBOutlet weak var thirdIconCorrect: UIView!
     
-// Sender first button click
+    // MARK: - Actions
     @IBAction func firstButtonClick(_ sender: Any) {
         style = .firstButton
         NotificationCenter.default.post(name: Notification.Name(rawValue: "firstButtonClick"), object: nil)
     }
-// Sender second button click
     @IBAction func secondButtonClick(_ sender: Any) {
         style = .secondButton
         NotificationCenter.default.post(name: Notification.Name(rawValue: "secondButtonClick"), object: nil)
     }
-// Sender third button click
     @IBAction func thirdButtonClick(_ sender: Any) {
         style = .thirdButton
         NotificationCenter.default.post(name: Notification.Name(rawValue: "thirdButtonClick"), object: nil)
     }
   
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -50,7 +49,7 @@ class ButtonView: UIView {
         }
     }
     
-// Button style  
+    //MARK: - Method Button style
     private func setStyle(_ style: ButtonStyle) {
         switch style {
             case .firstButton:
