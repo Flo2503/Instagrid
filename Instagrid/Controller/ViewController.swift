@@ -25,13 +25,14 @@ class ViewController: UIViewController {
         setUpObserver()
         buttonView.firstButtonClick(self)
         shareView.swipeOrientation()
+
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         shareView.swipeOrientation()
-        
+
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
