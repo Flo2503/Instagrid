@@ -466,7 +466,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fj8-GR-EuX" userLabel="Grids" customClass="CurrentView" customModule="Instagrid" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fj8-GR-EuX" userLabel="Grids View" customClass="CurrentView" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="30" y="248.66666666666663" width="315" height="315"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihQ-1c-cpR" userLabel="First Grid" customClass="FirstGrid" customModule="Instagrid" customModuleProvider="target">

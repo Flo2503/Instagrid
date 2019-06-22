@@ -21,16 +21,16 @@ class CurrentView: UIView {
     
      override init(frame: CGRect) {
         super.init(frame: frame)
-        setUp()
+        setUpObserver()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setUp()
+        setUpObserver()
     }
 
     //MARK: - Methods - Listeners. Call the right grid according to the selected button
-    private func setUp() {
+    private func setUpObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(firstButtonClick), name: NSNotification.Name("firstButtonClick"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(secondButtonClick), name: NSNotification.Name("secondButtonClick"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(thirdButtonClick), name: NSNotification.Name("thirdButtonClick"), object: nil)

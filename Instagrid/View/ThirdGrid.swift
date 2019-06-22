@@ -17,7 +17,7 @@ class ThirdGrid: GridView {
     @IBOutlet weak var topRightImage: UIImageView!
 
    
-    //MARK: - Actiond
+    //MARK: - Actions
     @IBAction func didTapButtonTL(_ sender: UIButton) {
         currentImageView = topLeftImage
         NotificationCenter.default.post(name: Notification.Name(rawValue: "tapOnGridButtons"), object: nil)
