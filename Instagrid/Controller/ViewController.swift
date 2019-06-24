@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     // MARK : -  Outlet
     @IBOutlet weak var buttonView: ButtonView!
-    @IBOutlet weak var currentView: CurrentView!
+    @IBOutlet weak var currentView: ContainerView!
     @IBOutlet weak var shareView: Share!
     
     // MARK: - Properties
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
             imagePicker.sourceType = .camera
             imagePicker.allowsEditing = true
             present(imagePicker, animated: true, completion: nil)
-        }else {
+        } else {
             let alert = UIAlertController(title: "Sorry !", message: "Camera not available, select image in Library", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Got it 👌", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
@@ -96,6 +96,7 @@ class ViewController: UIViewController {
             let image = UIGraphicsGetImageFromCurrentImageContext()
             return image
         }
+        
         return nil
     }
 

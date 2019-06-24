@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import  UIKit
+import UIKit
 
-class CurrentView: UIView {
+class ContainerView: UIView {
     
     //MARK: - Outlets
     @IBOutlet weak var firstGrid: FirstGrid!
